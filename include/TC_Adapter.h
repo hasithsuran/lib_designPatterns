@@ -1,5 +1,7 @@
 #pragma once
-
+#include <iostream>
+namespace techyB
+{
 namespace designs {
 
 	namespace adaptor {
@@ -44,35 +46,10 @@ namespace designs {
 		};
 
 		//---------------------------------------------------------------
-
-		void invokeRequest(Target* target) {
-			std::cout << "Request invoked!. Result : " << target->request() << std::endl;
-			std::cout << "\n\n";
-		}
-
-		void runClient() {
-			std::cout << "Works fine with just old Target objects! *****************" << std::endl;
-			Target* tgt = new Target();
-			invokeRequest(tgt);
-
-			Adaptee* adptee = new Adaptee();
-			std::cout << "Adaptee also works on its own! *****************" << std::endl;
-			std::cout << adptee->SpecificRequest() << std::endl;
-			std::cout << "\n\n";
-
-			std::cout << "Lets see how it works through object adapter *****************" << std::endl;
-			Adapter* adpter = new Adapter(adptee);
-			invokeRequest(adpter);
-
-			std::cout << "Lets see how it works through class adapter *****************" << std::endl;
-			ClassAdaptor* clsAdpter = new ClassAdaptor();
-			invokeRequest(clsAdpter);
-
-			delete tgt;
-			delete adptee;
-			delete adpter;
-			delete clsAdpter;
-		}
+		void invokeRequest(Target* target);
+		void runClient();
 
 	}
+}
+
 }
