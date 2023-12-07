@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+namespace techyB
+{
 namespace designs {
 
 	namespace facade {
@@ -43,20 +45,9 @@ namespace designs {
             }
         };
 
-        void runClient() {
-            // -------------- older implementation with tight coupling when facade class is not used ----------
-            //Database db;
-            //PaymentGateway pg;
-            //MessagingService msg;
-            //db.storeReservation("my reservatino");
-            //pg.processPayment("payment info");
-            //msg.sendMessage("my message");
-
-            //--------------- using facade class to hide complex details and simplify reservasion -----------
-            HotelReservationFacadeClass hotelReserv;
-            hotelReserv.makeReservation("Reservation info", "Payment info");
-        
-        }
+        void runClient();
 
     }
+}
+
 }
